@@ -17,9 +17,11 @@ public class AndroidSelenideTests extends TestBase {
     void searchTest() {
         step("Type search", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
+                    .setValue("BrowserStack");
         });
         step("Verify content found", () ->
-                $$(AppiumBy.className("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
+                $$(AppiumBy.className("android.widget.TextView"))
+                        .shouldHave(sizeGreaterThan(0)));
     }
 }

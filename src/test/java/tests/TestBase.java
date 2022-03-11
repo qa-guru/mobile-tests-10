@@ -15,14 +15,13 @@ import static helpers.Attach.getSessionId;
 
 
 public class TestBase {
+
     @BeforeAll
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.browser = BrowserstackMobileDriver.class.getName();
-//        Configuration.startMaximized = false;
         Configuration.browserSize = null;
-        Configuration.timeout = 10000;
     }
 
     @BeforeEach
@@ -38,6 +37,7 @@ public class TestBase {
         Attach.pageSource();
 
         closeWebDriver();
+
         Attach.video(sessionId);
     }
 }
