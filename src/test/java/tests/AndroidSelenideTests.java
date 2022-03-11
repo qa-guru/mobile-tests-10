@@ -20,6 +20,6 @@ public class AndroidSelenideTests extends TestBase {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
         });
         step("Verify content found", () ->
-                $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
+                $$(AppiumBy.className("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
     }
 }
