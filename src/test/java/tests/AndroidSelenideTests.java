@@ -1,5 +1,6 @@
 package tests;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,8 +16,8 @@ public class AndroidSelenideTests extends TestBase {
     @Test
     void searchTest() {
         step("Type search", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
         });
         step("Verify content found", () ->
                 $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
