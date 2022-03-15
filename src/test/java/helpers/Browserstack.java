@@ -6,6 +6,7 @@ import static java.lang.String.format;
 public class Browserstack {
 
     // DO NOT STORE CREDENTIALS, ONLY FOR EXAMPLE
+    // todo hide with Owner
     public static String
             browserstackLogin = "tpuretest_lSVWc2",
             browserstackPassword = "Ggd5nW19cyeGseGGn2m6";
